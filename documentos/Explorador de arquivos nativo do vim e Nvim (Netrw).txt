@@ -60,9 +60,9 @@ d: Criar diretório.
 
 Copiar/Mover arquivos:
 
-arque o destino: Navegue até a pasta e pressione mt.
+marque o destino: Navegue até a pasta e pressione mt.
 
-arque o arquivo: Navegue até o arquivo e pressione mf.
+marque o arquivo: Navegue até o arquivo e pressione mf.
 
 Execute:
 
