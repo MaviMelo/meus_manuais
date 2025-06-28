@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CSS – Propriedades e Sintaxe</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#css-propriedades-e-sintaxe"
+id="toc-css-propriedades-e-sintaxe"><strong>🎨 CSS – Propriedades e
+Sintaxe</strong></a>
+<ul>
+<li><a href="#layout-e-tamanho" id="toc-layout-e-tamanho">📐
+<strong>Layout e Tamanho</strong></a></li>
+<li><a href="#tipos-de-seletor"
+id="toc-tipos-de-seletor"><strong><strong>🧩 Tipos de
+Seletor</strong></strong></a></li>
+<li><a href="#dicas-rápidas" id="toc-dicas-rápidas"><strong>💡 5. Dicas
+Rápidas</strong></a></li>
+<li><a href="#combinadores-css-resumo"
+id="toc-combinadores-css-resumo"><strong><strong>🔗 Combinadores CSS –
+Resumo</strong></strong></a></li>
+</ul></li>
+<li><a href="#section" id="toc-section"><strong></strong></a></li>
+<li><a href="#section-1" id="toc-section-1"><strong></strong></a></li>
+<li><a href="#section-2" id="toc-section-2"><strong></strong></a></li>
+<li><a href="#section-3" id="toc-section-3"><strong></strong></a></li>
+<li><a href="#section-4" id="toc-section-4"><strong></strong></a></li>
+<li><a href="#section-5" id="toc-section-5"><strong></strong></a></li>
+<li><a href="#css-seletores-de-atributo"
+id="toc-css-seletores-de-atributo"><strong>CSS – Seletores de
+Atributo</strong></a>
+<ul>
+<li><a href="#tabela-de-seletores-de-atributo"
+id="toc-tabela-de-seletores-de-atributo">📚 <strong>Tabela de Seletores
+de Atributo</strong></a></li>
+<li><a href="#sistema-de-cores"
+id="toc-sistema-de-cores"><strong>Sistema de cores</strong></a></li>
+<li><a href="#section-6" id="toc-section-6"><strong></strong></a></li>
+<li><a
+href="#w3-color-picker-site-interativo-para-ver-cores-e-suas-referencias"
+id="toc-w3-color-picker-site-interativo-para-ver-cores-e-suas-referencias"><strong>W3
+Color Picker <strong>(site interativo para ver cores e suas
+referencias)</strong></strong></a></li>
+<li><a href="#box-model" id="toc-box-model"><strong>Box
+Model:</strong></a></li>
+<li><a href="#section-7" id="toc-section-7"><strong></strong></a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="css-propriedades-e-sintaxe"><strong>🎨 CSS – Propriedades e
+Sintaxe</strong></h2>
+<p><strong></strong></p>
+<p><strong>📌 1. O que é CSS?</strong></p>
+<p><strong><strong>CSS (Cascading Style Sheets) é a linguagem usada para
+estilizar elementos HTML. Controla cores, tamanhos, espaçamentos,
+posicionamento, entre outros.</strong></strong></p>
+<p><strong></strong></p>
+<p><strong>🧱 2. Sintaxe do CSS</strong></p>
+<p><img src="Pictures/100000010000062600000397737B964A.png"
+style="width:12.861cm;height:7.721cm" /><strong><strong></strong></strong></p>
+<p><strong><strong>seletor {</strong></strong></p>
+<p><strong><strong> propriedade: valor;</strong></strong></p>
+<p><strong><strong>}</strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong></strong></strong></p>
+<p><strong><strong>🔹 Seletor: indica qual elemento HTML será
+estilizado.</strong></strong></p>
+<p><strong><strong>🔹 Propriedade: o que será
+alterado.</strong></strong></p>
+<p><strong><strong>🔹 Valor: o valor atribuído à
+propriedade.</strong></strong></p>
+<p><strong>Exemplo:</strong></p>
+<p><strong><em><strong>p {</strong></em></strong></p>
+<p><strong><em><strong> color: blue;</strong></em></strong></p>
+<p><strong><em><strong> font-size: 16px;</strong></em></strong></p>
+<p><strong><em><strong>}</strong></em></strong></p>
+<p>/* Layout e Box Model */</p>
+<p>.menu ul {</p>
+<p> display: flex;</p>
+<p> gap: 20px;</p>
+<p> list-style: none;</p>
+<p> padding: 10px;</p>
+<p> background: #ddd;</p>
+<p>}</p>
+<p><strong><em><strong></strong></em></strong></p>
+<p><strong><em><strong></strong></em></strong></p>
+<p><strong><strong>🎯 3. Principais Propriedades CSS (com
+exemplos)</strong></strong></p>
+<h3 id="layout-e-tamanho">📐 <strong>Layout e Tamanho</strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Propriedade</td>
+<td>Exemplo</td>
+<td>O que faz</td>
+</tr>
+<tr class="even">
+<td> width</td>
+<td><em> width: 100px;</em></td>
+<td> Largura do elemento</td>
+</tr>
+<tr class="odd">
+<td> height</td>
+<td><em> height: 50px;</em></td>
+<td> Altura do elemento</td>
+</tr>
+<tr class="even">
+<td> max-width</td>
+<td><em> Max-width: 100%;</em></td>
+<td> Largura máxima</td>
+</tr>
+<tr class="odd">
+<td> min-height</td>
+<td><em> min-height: 300px; </em></td>
+<td> Altura mínima</td>
+</tr>
+<tr class="even">
+<td> Display</td>
+<td><em> Display: flex;</em></td>
+<td> Tipo de exibição (block, inline, flex, grid...)</td>
+</tr>
+<tr class="odd">
+<td> position</td>
+<td><em> position: relative;</em></td>
+<td> Tipo de posicionamento</td>
+</tr>
+<tr class="even">
+<td> top, left, right, bottom.</td>
+<td><em> top: 10px;</em></td>
+<td> Distância da borda em relação ao contêiner</td>
+</tr>
+<tr class="odd">
+<td> margin</td>
+<td><em> margin: 20px;</em></td>
+<td> Espaçamento externo</td>
+</tr>
+<tr class="even">
+<td> padding</td>
+<td><em> padding: 15px;</em></td>
+<td> Espaçamento interno</td>
+</tr>
+<tr class="odd">
+<td> box-sizing</td>
+<td><em> box-sizing: border-box;</em></td>
+<td> Modelo de cálculo de largura/altura</td>
+</tr>
+<tr class="even">
+<td> z-index</td>
+<td><em> z-index: 10;</em></td>
+<td> Ordem de sobreposição</td>
+</tr>
+<tr class="odd">
+<td> overflow</td>
+<td><em> overflow: auto;</em></td>
+<td> Comportamento do conteúdo que excede</td>
+</tr>
+<tr class="even">
+<td> visibility</td>
+<td><em> visibility: hidden;</em></td>
+<td> Define se o elemento é visível</td>
+</tr>
+<tr class="odd">
+<td> aspect-ratio</td>
+<td><em> aspect-ratio: 16 / 9;</em></td>
+<td> Proporção da largura para a altura</td>
+</tr>
+<tr class="even">
+<td> inset</td>
+<td><em> inset: 10px;</em></td>
+<td> Atalho para top, right, bottom e left</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<h4 id="cores-e-estética"><strong><strong>🎨 Cores e
+Estética</strong></strong></h4>
+<table>
+<tbody>
+<tr class="odd">
+<td>Propriedade</td>
+<td>Exemplo</td>
+<td>O que faz</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td><em>color: red;</em></td>
+<td>Cor do texto</td>
+</tr>
+<tr class="odd">
+<td>background</td>
+<td><em>background: #eee;</em></td>
+<td>Cor ou imagem de fundo</td>
+</tr>
+<tr class="even">
+<td>border</td>
+<td><em>border: 1px solid black;</em></td>
+<td>Borda do elemento</td>
+</tr>
+<tr class="odd">
+<td>opacity</td>
+<td><em>opacity: 0.5;</em></td>
+<td>Transparência</td>
+</tr>
+<tr class="even">
+<td>box-shadow</td>
+<td><em>box-shadow: 2px 2px 5px gray;</em></td>
+<td>Sombra do elemento</td>
+</tr>
+<tr class="odd">
+<td>border-radius</td>
+<td><em>border-radius: 10px;</em></td>
+<td>Cantos arredondados</td>
+</tr>
+<tr class="even">
+<td>background-image</td>
+<td><em>background-image: url(img.jpg);</em></td>
+<td>Imagem de fundo</td>
+</tr>
+<tr class="odd">
+<td>background-size</td>
+<td><em>background-size: cover;</em></td>
+<td>Tamanho da imagem de fundo</td>
+</tr>
+<tr class="even">
+<td>background-position</td>
+<td><em>background-position: center;</em></td>
+<td>Posição da imagem de fundo</td>
+</tr>
+<tr class="odd">
+<td>border-style</td>
+<td><em>border-style: dashed;</em></td>
+<td>Estilo da borda</td>
+</tr>
+<tr class="even">
+<td>border-color</td>
+<td><em>border-color: red;</em></td>
+<td>Cor da borda</td>
+</tr>
+<tr class="odd">
+<td>filter</td>
+<td><em>filter: blur(2px);</em></td>
+<td>Aplica efeitos visuais como blur, brilho</td>
+</tr>
+</tbody>
+</table>
+<h4 id="texto"><strong><strong>✍️ Texto</strong></strong></h4>
+<table>
+<tbody>
+<tr class="odd">
+<td>Propriedade</td>
+<td>Exemplo</td>
+<td>O que faz</td>
+</tr>
+<tr class="even">
+<td>font-size</td>
+<td><em>font-size: 18px;</em></td>
+<td>Tamanho da fonte</td>
+</tr>
+<tr class="odd">
+<td>font-family</td>
+<td><em>font-family: Arial;</em></td>
+<td>Tipo da fonte</td>
+</tr>
+<tr class="even">
+<td>font-weight</td>
+<td><em>font-weight: bold;</em></td>
+<td>Peso da fonte</td>
+</tr>
+<tr class="odd">
+<td>text-align</td>
+<td><em>text-align: center;</em></td>
+<td>Alinhamento do texto</td>
+</tr>
+<tr class="even">
+<td>line-height</td>
+<td><em>line-height: 1.5;</em></td>
+<td>Espaçamento entre linhas</td>
+</tr>
+<tr class="odd">
+<td>text-decoration</td>
+<td><em>text-decoration: underline;</em></td>
+<td>Sublinhado, linha sobre ou através</td>
+</tr>
+<tr class="even">
+<td>text-transform</td>
+<td><em>text-transform: uppercase;</em></td>
+<td>Transformação do texto (caixa alta/baixa)</td>
+</tr>
+<tr class="odd">
+<td>letter-spacing</td>
+<td><em>letter-spacing: 2px;</em></td>
+<td>Espaçamento entre letras</td>
+</tr>
+<tr class="even">
+<td>word-spacing</td>
+<td><em>word-spacing: 5px;</em></td>
+<td>Espaçamento entre palavras</td>
+</tr>
+<tr class="odd">
+<td>white-space</td>
+<td><em>white-space: nowrap;</em></td>
+<td>Quebra ou não de linhas automáticas</td>
+</tr>
+<tr class="even">
+<td>direction</td>
+<td><em>direction: rtl;</em></td>
+<td>Direção do texto (esquerda → direita ou vice)</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<p><strong><strong>🔄 ANIMAÇÕES E TRANSFORMAÇÕES</strong></strong></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Propriedade</td>
+<td>Exemplo</td>
+<td>O que faz</td>
+</tr>
+<tr class="even">
+<td>transition</td>
+<td><em>transition: all 0.3s ease;</em></td>
+<td>Transição suave de propriedades</td>
+</tr>
+<tr class="odd">
+<td>transform</td>
+<td><em>transform: rotate(45deg);</em></td>
+<td>Aplica transformações 2D/3D</td>
+</tr>
+<tr class="even">
+<td>animation</td>
+<td><em>animation: slide 2s infinite;</em></td>
+<td>Animações customizadas</td>
+</tr>
+<tr class="odd">
+<td>@keyframes</td>
+<td><em>@keyframes slide { ... }</em></td>
+<td>Define a animação</td>
+</tr>
+<tr class="even">
+<td>animation-delay</td>
+<td><em>animation-delay: 1s;</em></td>
+<td>Tempo de espera antes da animação</td>
+</tr>
+<tr class="odd">
+<td>animation-iteration-count</td>
+<td><em>animation-iteration-count: infinite;</em></td>
+<td>Número de repetições da animação</td>
+</tr>
+<tr class="even">
+<td>transition-property</td>
+<td><em>transition-property: background;</em></td>
+<td>Define qual propriedade será animada</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong><strong>📱 RESPONSIVIDADE</strong></strong></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Propriedade</td>
+<td>Exemplo</td>
+<td>O que faz</td>
+</tr>
+<tr class="even">
+<td>@media</td>
+<td><em>@media (max-width: 768px) { ... }</em></td>
+<td>Aplica regras para diferentes larguras de tela</td>
+</tr>
+<tr class="odd">
+<td>flex-direction</td>
+<td><em>flex-direction: column;</em></td>
+<td>Direção dos itens em um container flex</td>
+</tr>
+<tr class="even">
+<td>justify-content</td>
+<td><em>justify-content: space-between;</em></td>
+<td>Alinhamento horizontal em flex</td>
+</tr>
+<tr class="odd">
+<td>align-items</td>
+<td><em>align-items: center;</em></td>
+<td>Alinhamento vertical em flex</td>
+</tr>
+<tr class="even">
+<td>grid-template-columns</td>
+<td><em>grid-template-columns: 1fr 1fr;</em></td>
+<td>Define colunas do grid</td>
+</tr>
+<tr class="odd">
+<td>object-fit</td>
+<td><em>object-fit: cover;</em></td>
+<td>Ajusta a imagem ao contêiner</td>
+</tr>
+<tr class="even">
+<td>width: 100vw</td>
+<td><em>width: 100vw;</em></td>
+<td>Define largura baseada na largura da viewport</td>
+</tr>
+<tr class="odd">
+<td>height: 100vh</td>
+<td><em>height: 100vh;</em></td>
+<td>Altura da viewport</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<h3 id="tipos-de-seletor"><strong><strong>🧩 Tipos de
+Seletor</strong></strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tipo</td>
+<td>Exemplo</td>
+<td>Aplica em...</td>
+</tr>
+<tr class="even">
+<td><strong>Elemento</strong></td>
+<td><em>p {}</em></td>
+<td>Todos os <em>&lt;p&gt; </em></td>
+</tr>
+<tr class="odd">
+<td><strong>Classe</strong></td>
+<td><em>.menu {}</em></td>
+<td>Elementos com <em>class="menu"</em></td>
+</tr>
+<tr class="even">
+<td><strong>ID</strong></td>
+<td><em>#logo {}</em></td>
+<td>Elemento com <em>id="logo" </em></td>
+</tr>
+<tr class="odd">
+<td><strong>Descenden<strong>t</strong>e</strong></td>
+<td><em>nav a {}</em></td>
+<td><em>&lt;a&gt;</em> dentro de <em>&lt;nav&gt;</em></td>
+</tr>
+<tr class="even">
+<td><strong>Combinado</strong></td>
+<td><em>.box.active {}</em></td>
+<td>Elementos com ambas as classes</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<h3 id="dicas-rápidas"><strong>💡 5. Dicas Rápidas</strong></h3>
+<ul>
+<li>Sempre termine as declarações com <em>;</em></li>
+<li>Use <strong>classes</strong> ao invés de IDs para estilos
+reutilizáveis</li>
+<li>Use <strong>comentários</strong> com <em>/* ... */</em></li>
+</ul>
+<h3 id="combinadores-css-resumo"><strong><strong>🔗 Combinadores CSS –
+Resumo</strong></strong></h3>
+<p><strong>Combinadores</strong> definem <strong>relações entre
+elementos</strong> na hierarquia do HTML.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tipo</td>
+<td>Símbolo</td>
+<td>Explica</td>
+<td>Exemplo</td>
+</tr>
+<tr class="even">
+<td><strong>Descendente</strong></td>
+<td>(espaço)</td>
+<td>Seleciona todos os filhos e netos</td>
+<td><em>div p</em> seleciona todos os <em>&lt;p&gt;</em> dentro de um
+<em>&lt;div&gt;</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Filho Direto</strong></td>
+<td><em>&gt;</em></td>
+<td>Apenas filhos imediatos</td>
+<td><em>ul &gt; li</em> seleciona apenas <em>&lt;li&gt;</em> diretamente
+dentro do <em>&lt;ul&gt;</em></td>
+</tr>
+<tr class="even">
+<td><strong>Irmão Adjacente</strong></td>
+<td><em>+</em></td>
+<td>Seleciona o próximo irmão</td>
+<td><em>h1 + p</em> seleciona o <em>&lt;p&gt;</em> logo após um
+<em>&lt;h1&gt;</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Irmão Geral</strong></td>
+<td><em>~</em></td>
+<td>Seleciona todos os irmãos seguintes</td>
+<td><em>h1 ~ p</em> seleciona todos os <em>&lt;p&gt;</em> que vêm depois
+de um <em>&lt;h1&gt;</em> no mesmo nível</td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><img src="Pictures/100000010000072E00000602179E551E.png"
+style="width:12.441cm;height:10.407cm" /><strong></strong></p>
+<h2 id="section"><strong></strong></h2>
+<h2 id="section-1"><strong></strong></h2>
+<h2 id="section-2"><strong></strong></h2>
+<h2 id="section-3"><strong></strong></h2>
+<h2 id="section-4"><strong></strong></h2>
+<h2 id="section-5"><strong></strong></h2>
+<p><strong></strong></p>
+<h2 id="css-seletores-de-atributo"><strong>CSS – Seletores de
+Atributo</strong></h2>
+<p>Seletores de atributo permitem aplicar estilos com base nos
+<strong>atributos HTML</strong> dos elementos e seus
+<strong>valores</strong>. Eles são muito úteis para selecionar elementos
+de forma mais específica, sem depender de classes ou IDs.</p>
+<h3 id="tabela-de-seletores-de-atributo">📚 <strong>Tabela de Seletores
+de Atributo</strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Seletor</td>
+<td>Descrição</td>
+<td>Exemplo</td>
+</tr>
+<tr class="even">
+<td><em>[atributo]</em></td>
+<td>Seleciona elementos que <strong>possuem</strong> o atributo
+especificado</td>
+<td><em>input[required]</em></td>
+</tr>
+<tr class="odd">
+<td><em>[atributo="valor"]</em></td>
+<td>Seleciona elementos com atributo <strong>igual ao valor
+exato</strong></td>
+<td><em>a[target="_blank"]</em></td>
+</tr>
+<tr class="even">
+<td><em>[atributo~="valor"]</em></td>
+<td>Seleciona elementos com valor que <strong>contém a palavra</strong>
+(lista separada por espaço)</td>
+<td><em>[class~="ativo"]</em></td>
+</tr>
+<tr class="odd">
+<td>[atributo="valor"]</td>
+<td>Seleciona elementos com valor <strong>igual ou começando com
+</strong><em>valor-</em> (geralmente usado para idiomas)</td>
+<td> input[type="email"] </td>
+</tr>
+<tr class="even">
+<td><em>[atributo^="valor"]</em></td>
+<td>Seleciona elementos cujo valor <strong>começa com</strong>
+determinado texto</td>
+<td><em>a[href^="https"]</em></td>
+</tr>
+<tr class="odd">
+<td><em>[atributo$="valor"]</em></td>
+<td>Seleciona elementos cujo valor <strong>termina com</strong>
+determinado texto</td>
+<td><em>img[src$=".png"]</em></td>
+</tr>
+<tr class="even">
+<td><em>[atributo*="valor"]</em></td>
+<td>Seleciona elementos cujo valor <strong>contém</strong> determinado
+trecho de texto</td>
+<td><em>a[href*="login"]</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong></strong></p>
+<h3 id="sistema-de-cores"><strong>Sistema de cores</strong></h3>
+<p><strong>◍RGB <strong>é útil quando se trabalha com
+</strong></strong><img
+src="Pictures/100000010000055600000450743A36D2.png"
+style="width:11.555cm;height:8.403cm" /><strong><strong>sistemas que
+naturalmente</strong></strong></p>
+<p><strong><strong>separam cores em vermelho, verde e
+azul.</strong></strong></p>
+<p><strong>◍HSL<strong> é particularmente amigável para humanos,
+tornando mais fácil</strong></strong></p>
+<p><strong><strong>ajustar cores de forma precisa e
+intuitiva</strong></strong></p>
+<p><strong>◍HEX <strong>é compacto e ótimo para copiar/colar de
+ferramentas de</strong></strong></p>
+<p><strong><strong>design, mas pode ser menos intuitivo ao tentar fazer
+pequenos ajustes de cor:</strong></strong></p>
+<h3 id="section-6"><strong></strong></h3>
+<h3
+id="w3-color-picker-site-interativo-para-ver-cores-e-suas-referencias"><strong>W3
+Color Picker <strong>(site interativo para ver cores e suas
+referencias)</strong></strong></h3>
+<p><a
+href="https://www.w3schools.com/colors/colors_picker.asp"><strong><strong>https://www.w3schools.com/colors/colors_picker.asp</strong></strong></a></p>
+<p><strong></strong></p>
+<p><strong>Cor e Fundo</strong></p>
+<p><strong><strong>◍</strong>color: <strong>Define a cor do texto de um
+elemento.</strong></strong></p>
+<p><strong><strong>◍</strong>background-color:<strong> Define a cor de
+fundo de um elemento.</strong></strong></p>
+<p><strong><strong>◍</strong>background-image:<strong> Especifica uma
+imagem a ser usada como fundo de um elemento.</strong></strong></p>
+<p><strong><strong>◍</strong>background-position:<strong> Define a
+posição inicial da imagem de fundo.</strong></strong></p>
+<p><strong><strong>◍</strong>background-repeat:<strong> Define se e como
+uma imagem de fundo deve ser repetida.</strong></strong></p>
+<h3 id="box-model"><strong>Box Model:</strong></h3>
+<p><strong>◍margin:<strong> Define o espaço ao redor de elementos
+</strong></strong><img
+src="Pictures/100000010000062900000450F962C1AA.png"
+style="width:9.077cm;height:6.833cm" /><strong><strong>(fora da
+borda).</strong></strong></p>
+<p><strong>◍padding: <strong>Define o espaço entre o conteúdo de um
+elemento e sua borda.</strong></strong></p>
+<p><strong>◍border:<strong> Especifica o estilo, largura e cor da borda
+de um elemento.</strong></strong></p>
+<p><strong>◍width:<strong> Define a largura de um
+elemento.</strong></strong></p>
+<p><strong>◍height: <strong>Define a altura de um
+elemento.</strong></strong></p>
+<h3 id="section-7"><strong></strong></h3>
+<p><strong></strong></p>
+<p><strong><em><strong></strong></em></strong></p>
+<p><strong><em><strong>🧾
+</strong></em><em><strong>index.html</strong></em><em><strong> – Exemplo
+com semântica, seletores, atributos e
+combinadores</strong></em></strong></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p>&lt;html lang="pt-BR"&gt;</p>
+<p>&lt;head&gt;</p>
+<p> &lt;meta charset="UTF-8"&gt;</p>
+<p> &lt;title&gt;Exemplo Didático de CSS&lt;/title&gt;</p>
+<p> &lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p> &lt;header id="topo"&gt;</p>
+<p> &lt;h1&gt;Bem-vindo ao CSS&lt;/h1&gt;</p>
+<p> &lt;p class="intro"&gt;Aprenda como aplicar estilos com
+CSS.&lt;/p&gt;</p>
+<p> &lt;/header&gt;</p>
+<p> &lt;nav class="menu"&gt;</p>
+<p> &lt;ul&gt;</p>
+<p> &lt;li&gt;&lt;a href="#"
+target="_blank"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p> &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;</p>
+<p> &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;</p>
+<p> &lt;/ul&gt;</p>
+<p> &lt;/nav&gt;</p>
+<p> &lt;main&gt;</p>
+<p> &lt;section class="conteudo destaque" lang="pt-br"&gt;</p>
+<p> &lt;h2&gt;Seção Principal&lt;/h2&gt;</p>
+<p> &lt;p&gt;Este é um parágrafo dentro da seção
+principal.&lt;/p&gt;</p>
+<p> &lt;p class="ativo"&gt;Parágrafo com classe "ativo".&lt;/p&gt;</p>
+<p> &lt;input type="email" required placeholder="Digite seu
+e-mail"&gt;</p>
+<p> &lt;/section&gt;</p>
+<p> &lt;aside&gt;</p>
+<p> &lt;h3&gt;Links úteis&lt;/h3&gt;</p>
+<p> &lt;a
+href="https://www.w3schools.com/colors/colors_picker.asp"&gt;Color
+Picker&lt;/a&gt;</p>
+<p> &lt;/aside&gt;</p>
+<p> &lt;/main&gt;</p>
+<p> &lt;footer&gt;</p>
+<p> &lt;p&gt;&amp;copy; 2025 CSS Academy&lt;/p&gt;</p>
+<p> &lt;/footer&gt;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p><em><strong></strong></em></p>
+<p><em><strong>🎨 </strong><strong>style.css</strong><strong> –
+Aplicando os conceitos do PDF</strong></em></p>
+<p>/* Seletor por elemento */</p>
+<p>body {</p>
+<p> font-family: Arial, sans-serif;</p>
+<p> line-height: 1.5;</p>
+<p> margin: 0;</p>
+<p> padding: 0;</p>
+<p>}</p>
+<p>/* Cores e fundo */</p>
+<p>header {</p>
+<p> background-color: #f0f0f0;</p>
+<p> color: #333;</p>
+<p> padding: 20px;</p>
+<p>}</p>
+<p>/* Seletor por classe */</p>
+<p>.intro {</p>
+<p> font-size: 18px;</p>
+<p> color: blue;</p>
+<p>}</p>
+<p>/* Seletor por ID */</p>
+<p>#topo {</p>
+<p> border-bottom: 2px solid #ccc;</p>
+<p>}</p>
+<p>/* Layout e Box Model */</p>
+<p>.menu ul {</p>
+<p> display: flex;</p>
+<p> gap: 20px;</p>
+<p> list-style: none;</p>
+<p> padding: 10px;</p>
+<p> background: #ddd;</p>
+<p>}</p>
+<p>/* Combinador: descendente */</p>
+<p>nav a {</p>
+<p> text-decoration: none;</p>
+<p> color: black;</p>
+<p>}</p>
+<p>/* Combinador: irmão adjacente */</p>
+<p>h1 + p {</p>
+<p> font-style: italic;</p>
+<p>}</p>
+<p>/* Combinador: filho direto */</p>
+<p>ul &gt; li {</p>
+<p> padding: 5px;</p>
+<p>}</p>
+<p>/* Seletor de atributo */</p>
+<p>a[target="_blank"] {15 pt</p>
+<p> color: red;</p>
+<p>}</p>
+<p>/* Seletor com atributo exato */</p>
+<p>input[type="email"] {</p>
+<p> border: 1px solid green;</p>
+<p>}</p>
+<p>/* Seletor com valor parcial */</p>
+<p>a[href*="color"] {</p>
+<p> font-weight: bold;</p>
+<p>}</p>
+<p>/* Classe combinada */</p>
+<p>.destaque.ativo {</p>
+<p> background-color: yellow;</p>
+<p>}</p>
+<p>/* Responsividade simples */</p>
+<p>@media (max-width: 600px) {</p>
+<p> .menu ul {</p>
+<p> flex-direction: column;</p>
+<p> }</p>
+<p>}</p>
+</body>
+</html>

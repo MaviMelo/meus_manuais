@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>atalhos e comandos para terminal(CMD, PowerShell e Bassh)</title>
+  <style>
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class] {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+
+    .display.math {
+      display: block;
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+  </style>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+  <nav id="TOC" role="doc-toc">
+    <ul>
+      <li><a href="#guia-completo-de-atalhos-e-comandos-para-terminais-bash-powershell-e-cmd"
+          id="toc-guia-completo-de-atalhos-e-comandos-para-terminais-bash-powershell-e-cmd">Guia
+          Completo de Atalhos e Comandos para Terminais (Bash, PowerShell e
+          CMD)</a>
+        <ul>
+          <li><a href="#índice" id="toc-índice">Índice</a></li>
+          <li><a href="#atalhos-comuns-de-terminal-bash-powershell-e-cmd"
+              id="toc-atalhos-comuns-de-terminal-bash-powershell-e-cmd">1. Atalhos
+              Comuns de Terminal (Bash, PowerShell e CMD)</a></li>
+          <li><a href="#atalhos-específicos-do-terminal-bash" id="toc-atalhos-específicos-do-terminal-bash">2. Atalhos
+              Específicos do
+              Terminal Bash</a>
+            <ul>
+              <li><a href="#edição-e-controle-de-linha" id="toc-edição-e-controle-de-linha">2.1. Edição e Controle de
+                  Linha:</a></li>
+              <li><a href="#histórico-e-execução-de-comandos" id="toc-histórico-e-execução-de-comandos">2.2. Histórico e
+                  Execução de
+                  Comandos:</a></li>
+              <li><a href="#controle-de-processos" id="toc-controle-de-processos">2.3.
+                  Controle de Processos:</a></li>
+              <li><a href="#gerenciamento-da-tela" id="toc-gerenciamento-da-tela">2.4.
+                  Gerenciamento da Tela:</a></li>
+            </ul>
+          </li>
+          <li><a href="#atalhos-específicos-do-powershell" id="toc-atalhos-específicos-do-powershell">3. Atalhos
+              Específicos do
+              PowerShell</a>
+            <ul>
+              <li><a href="#edição-de-texto-e-comando" id="toc-edição-de-texto-e-comando">3.1. Edição de Texto e
+                  Comando</a></li>
+              <li><a href="#controle-de-execução" id="toc-controle-de-execução">3.2.
+                  Controle de Execução</a></li>
+              <li><a href="#histórico-de-comandos" id="toc-histórico-de-comandos">3.3.
+                  Histórico de Comandos</a></li>
+              <li><a href="#interface-do-powershell-ise-integrated-scripting-environment"
+                  id="toc-interface-do-powershell-ise-integrated-scripting-environment">3.4.
+                  Interface do PowerShell ISE (Integrated Scripting Environment)</a></li>
+            </ul>
+          </li>
+          <li><a href="#comandos-comuns-e-específicos-para-bash-cmd-e-powershell"
+              id="toc-comandos-comuns-e-específicos-para-bash-cmd-e-powershell">4.
+              Comandos Comuns e Específicos para Bash, CMD e PowerShell</a></li>
+          <li><a href="#comandos-comuns-funcionalidade-similar-ou-equivalentes"
+              id="toc-comandos-comuns-funcionalidade-similar-ou-equivalentes">5.
+              Comandos Comuns (funcionalidade similar ou equivalentes)</a>
+            <ul>
+              <li><a href="#navegação-de-diretórios" id="toc-navegação-de-diretórios">5.1. Navegação de Diretórios:</a>
+              </li>
+              <li><a href="#listar-conteúdo-do-diretório" id="toc-listar-conteúdo-do-diretório">5.2. Listar Conteúdo do
+                  Diretório</a></li>
+              <li><a href="#criar-diretório" id="toc-criar-diretório">5.3. Criar
+                  Diretório</a></li>
+              <li><a href="#remover-arquivo" id="toc-remover-arquivo">5.4. Remover
+                  Arquivo</a></li>
+              <li><a href="#remover-diretório-vazio" id="toc-remover-diretório-vazio">5.5. Remover Diretório (Vazio)</a>
+              </li>
+              <li><a href="#remover-diretório-não-vaziorecursivo" id="toc-remover-diretório-não-vaziorecursivo">5.6.
+                  Remover Diretório
+                  (Não Vazio/Recursivo)</a></li>
+              <li><a href="#copiar-arquivos" id="toc-copiar-arquivos">5.7. Copiar
+                  Arquivos</a></li>
+              <li><a href="#moverrenomear-arquivos" id="toc-moverrenomear-arquivos">5.8. Mover/Renomear Arquivos</a>
+              </li>
+              <li><a href="#exibir-conteúdo-de-arquivo" id="toc-exibir-conteúdo-de-arquivo">5.9. Exibir Conteúdo de
+                  Arquivo</a></li>
+              <li><a href="#limpar-tela" id="toc-limpar-tela">5.10. Limpar
+                  Tela</a></li>
+              <li><a href="#testar-conectividade-de-rede" id="toc-testar-conectividade-de-rede">5.11. Testar
+                  Conectividade de
+                  Rede</a></li>
+              <li><a href="#configuração-de-ip-exibir" id="toc-configuração-de-ip-exibir">5.12. Configuração de IP
+                  (Exibir)</a></li>
+              <li><a href="#sair-do-terminal" id="toc-sair-do-terminal">5.13. Sair do
+                  Terminal</a></li>
+            </ul>
+          </li>
+          <li><a href="#comandos-específicos-do-bash" id="toc-comandos-específicos-do-bash">6. Comandos Específicos do
+              Bash</a></li>
+          <li><a href="#comandos-específicos-do-cmd-prompt-de-comando-do-windows"
+              id="toc-comandos-específicos-do-cmd-prompt-de-comando-do-windows">7.
+              Comandos Específicos do CMD (Prompt de Comando do Windows)</a></li>
+          <li><a href="#comandos-específicos-do-powershell" id="toc-comandos-específicos-do-powershell">8. Comandos
+              Específicos do
+              PowerShell</a></li>
+          <li><a href="#gerenciamento-de-variáveis-de-ambiente" id="toc-gerenciamento-de-variáveis-de-ambiente">9.
+              Gerenciamento de
+              Variáveis de Ambiente</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <h1 id="guia-completo-de-atalhos-e-comandos-para-terminais-bash-powershell-e-cmd">Guia
+    Completo de Atalhos e Comandos para Terminais (Bash, PowerShell e
+    CMD)</h1>
+  <p>Este guia detalhado explora os atalhos de teclado e comandos
+    essenciais para otimizar sua produtividade em diferentes ambientes de
+    linha de comando: Bash (comum em sistemas Linux e macOS), PowerShell (o
+    shell de script e automação da Microsoft) e CMD (o Prompt de Comando
+    tradicional do Windows). Compreender e dominar essas ferramentas é
+    fundamental para qualquer desenvolvedor, administrador de sistemas ou
+    entusiasta que busca eficiência na interação com o computador.</p>
+  <h2 id="índice">Índice</h2>
+  <ol type="1">
+    <li><a href="#1-atalhos-comuns-de-terminal-bash-powershell-e-cmd">Atalhos
+        Comuns de Terminal (Bash, PowerShell e CMD)</a></li>
+    <li><a href="#2-atalhos-específicos-do-terminal-bash">Atalhos
+        Específicos do Terminal Bash</a> 2.1. <a href="#21-edição-e-controle-de-linha">Edição e Controle de Linha</a>
+      2.2. <a href="#22-histórico-e-execução-de-comandos">Histórico e Execução
+        de Comandos</a> 2.3. <a href="#23-controle-de-processos">Controle de
+        Processos</a> 2.4. <a href="#24-gerenciamento-da-tela">Gerenciamento da
+        Tela</a></li>
+    <li><a href="#3-atalhos-específicos-do-powershell">Atalhos Específicos
+        do PowerShell</a> 3.1. <a href="#31-edição-de-texto-e-comando">Edição de
+        Texto e Comando</a> 3.2. <a href="#32-controle-de-execução">Controle de
+        Execução</a> 3.3. <a href="#33-histórico-de-comandos">Histórico de
+        Comandos</a> 3.4. <a href="#34-interface-do-powershell-ise-integrated-scripting-environment">Interface
+        do PowerShell ISE (Integrated Scripting Environment)</a></li>
+    <li><a href="#4-comandos-comuns-e-específicos-para-bash-cmd-e-powershell">Comandos
+        Comuns e Específicos para Bash, CMD e PowerShell</a></li>
+    <li><a href="#5-comandos-comuns-funcionalidade-similar-ou-equivalentes">Comandos
+        Comuns (funcionalidade similar ou equivalentes)</a> 5.1. <a href="#51-navegação-de-diretórios">Navegação de
+        Diretórios</a> 5.2. <a href="#52-listar-conteúdo-do-diretório">Listar Conteúdo do Diretório</a>
+      5.3. <a href="#53-criar-diretório">Criar Diretório</a> 5.4. <a href="#54-remover-arquivo">Remover Arquivo</a> 5.5.
+      <a href="#55-remover-diretório-vazio">Remover Diretório (Vazio)</a> 5.6. <a
+        href="#56-remover-diretório-não-vaziorecursivo">Remover Diretório (Não
+        Vazio/Recursivo)</a> 5.7. <a href="#57-copiar-arquivos">Copiar
+        Arquivos</a> 5.8. <a href="#58-moverrenomear-arquivos">Mover/Renomear
+        Arquivos</a> 5.9. <a href="#59-exibir-conteúdo-de-arquivo">Exibir
+        Conteúdo de Arquivo</a> 5.10. <a href="#510-limpar-tela">Limpar Tela</a>
+      5.11. <a href="#511-testar-conectividade-de-rede">Testar Conectividade
+        de Rede</a> 5.12. <a href="#512-configuração-de-ip-exibir">Configuração
+        de IP (Exibir)</a> 5.13. <a href="#513-sair-do-terminal">Sair do
+        Terminal</a>
+    </li>
+    <li><a href="#6-comandos-específicos-do-bash">Comandos Específicos do
+        Bash</a></li>
+    <li><a href="#7-comandos-específicos-do-cmd-prompt-de-comando-do-windows">Comandos
+        Específicos do CMD (Prompt de Comando do Windows)</a></li>
+    <li><a href="#8-comandos-específicos-do-powershell">Comandos Específicos
+        do PowerShell</a></li>
+    <li><a href="#9-gerenciamento-de-variáveis-de-ambiente">Gerenciamento de
+        Variáveis de Ambiente</a></li>
+    <li><a href="#10-aliases-criando-atalhos-personalizados-para-comandos">Aliases:
+        Criando Atalhos Personalizados para Comandos</a></li>
+  </ol>
+  <hr />
+  <h2 id="atalhos-comuns-de-terminal-bash-powershell-e-cmd">1. Atalhos
+    Comuns de Terminal (Bash, PowerShell e CMD)</h2>
+  <p>Estes atalhos são amplamente utilizados e funcionam de forma
+    semelhante em muitos terminais modernos, embora o comportamento exato
+    possa variar ligeiramente dependendo do emulador de terminal (como
+    Windows Terminal, GNOME Terminal, iTerm2) e do shell.</p>
+  <ul>
+    <li><strong><code>Ctrl + C</code></strong>: Interrompe o comando ou
+      processo atual em execução. Este é um dos atalhos mais universais e
+      importantes para parar processos que estão travados ou demorando
+      muito.</li>
+    <li><strong><code>Ctrl + A</code></strong>:
+      <ul>
+        <li><strong>Bash</strong>: Move o cursor para o <strong>início da
+            linha</strong>.</li>
+        <li><strong>PowerShell (Console)</strong>: Em algumas configurações ou
+          emuladores de terminal como o Windows Terminal, pode selecionar todo o
+          texto na linha de comando. No entanto, para mover o cursor para o início
+          da linha, o mais comum é usar a tecla <code>Home</code> ou
+          <code>Ctrl + Home</code>.
+        </li>
+      </ul>
+    </li>
+    <li><strong><code>Ctrl + E</code></strong>: Move o cursor para o
+      <strong>final da linha</strong>.
+    </li>
+    <li><strong><code>Ctrl + V</code></strong>: Cola o texto copiado ou
+      recortado. Este atalho é amplamente suportado na maioria dos terminais
+      modernos.</li>
+    <li><strong><code>Tab</code></strong>: Auto-completa comandos, nomes de
+      arquivos e diretórios. Pressione repetidamente para ciclar pelas opções
+      disponíveis. Essencial para agilizar a digitação e evitar erros.</li>
+    <li><strong><code>Ctrl + L</code></strong>: Limpa a tela do terminal,
+      mantendo a linha de comando atual no topo. Funciona em Bash e
+      PowerShell.</li>
+    <li><strong><code>Ctrl + D</code></strong>: Envia um sinal de “fim de
+      arquivo” (EOF). Pode ser usado para encerrar a entrada de dados (por
+      exemplo, ao digitar texto para um comando como <code>cat</code>) ou para
+      sair da sessão do terminal (similar a <code>exit</code>) se a linha de
+      comando estiver vazia.</li>
+    <li><strong><code>Ctrl + Shift + T</code></strong>: Abre uma nova aba no
+      terminal. Este atalho é comum em muitos emuladores de terminal modernos
+      (como GNOME Terminal, Windows Terminal).</li>
+    <li><strong><code>Ctrl + Shift + N</code></strong>: Abre uma nova janela
+      no terminal. Comum em muitos emuladores de terminal.</li>
+    <li><strong><code>Ctrl + Shift + W</code></strong>: Fecha a aba/janela
+      atual no terminal. Comum em muitos emuladores de terminal.</li>
+  </ul>
+  <p><strong>Observações sobre atalhos de edição:</strong> *
+    <strong><code>Ctrl + X</code></strong>: No contexto de terminais de
+    console, <code>Ctrl + X</code> <strong>não</strong> é um atalho
+    universal para “recortar” texto como em editores gráficos. Em Bash,
+    <code>Ctrl + X</code> seguido de <code>Ctrl + E</code> pode abrir um
+    editor externo para a linha de comando. Em PowerShell ISE, pode recortar
+    texto selecionado. * <strong><code>Ctrl + Z</code></strong>: Em
+    ambientes de console (Bash e PowerShell), <code>Ctrl + Z</code>
+    geralmente <strong>pausa</strong> o processo atual, colocando-o em
+    segundo plano. Não é um “desfazer” de edição de texto. Em PowerShell
+    ISE, <code>Ctrl + Z</code> funciona como “desfazer” para edição de
+    texto.
+  </p>
+  <h2 id="atalhos-específicos-do-terminal-bash">2. Atalhos Específicos do
+    Terminal Bash</h2>
+  <p>O Bash (Bourne Again SHell) é o shell padrão na maioria das
+    distribuições Linux e macOS. Estes atalhos são otimizados para navegação
+    e edição de linha de comando, aproveitando as capacidades do Readline, a
+    biblioteca de edição de linha do Bash.</p>
+  <h3 id="edição-e-controle-de-linha">2.1. Edição e Controle de
+    Linha:</h3>
+  <ul>
+    <li><strong><code>Ctrl + B</code></strong>: Move o cursor um caractere
+      para trás.</li>
+    <li><strong><code>Alt + B</code></strong>: Move o cursor uma palavra
+      para trás.</li>
+    <li><strong><code>Ctrl + F</code></strong>: Move o cursor um caractere
+      para frente.</li>
+    <li><strong><code>Alt + F</code></strong>: Move o cursor uma palavra
+      para frente.</li>
+    <li><strong><code>Ctrl + W</code></strong>: Apaga a palavra anterior ao
+      cursor. O texto apagado é armazenado em um “kill ring” (buffer de
+      recorte).</li>
+    <li><strong><code>Ctrl + U</code></strong>: Apaga tudo do cursor até o
+      início da linha. O texto apagado é armazenado no “kill ring”.</li>
+    <li><strong><code>Ctrl + K</code></strong>: Apaga tudo do cursor até o
+      final da linha. O texto apagado é armazenado no “kill ring”.</li>
+    <li><strong><code>Ctrl + Y</code></strong>: Cola o texto que foi apagado
+      com <code>Ctrl + U</code>, <code>Ctrl + K</code> ou
+      <code>Ctrl + W</code> (o conteúdo do “kill ring”).
+    </li>
+    <li><strong><code>Alt + D</code></strong>: Apaga a palavra à frente do
+      cursor.</li>
+    <li><strong><code>Ctrl + _</code></strong>: Desfaz a última alteração na
+      linha de comando.</li>
+  </ul>
+  <p><strong>Observação</strong>: O atalho <code>Ctrl + Alt + T</code> é
+    um atalho de ambiente de desktop (como GNOME ou KDE) para abrir o
+    terminal, e não um atalho interno do Bash.</p>
+  <h3 id="histórico-e-execução-de-comandos">2.2. Histórico e Execução de
+    Comandos:</h3>
+  <ul>
+    <li><strong><code>Ctrl + R</code></strong>: Pesquisa incremental inversa
+      no histórico de comandos. Comece a digitar e o Bash mostrará o comando
+      mais recente que corresponde. Pressione <code>Ctrl + R</code> novamente
+      para navegar entre os resultados mais antigos.</li>
+    <li><strong><code>Ctrl + G</code></strong>: Sai do modo de pesquisa do
+      histórico (<code>Ctrl + R</code>).</li>
+    <li><strong><code>Ctrl + P</code> ou
+        <code>Seta para Cima (↑)</code></strong>: Exibe o comando anterior no
+      histórico.</li>
+    <li><strong><code>Ctrl + N</code> ou
+        <code>Seta para Baixo (↓)</code></strong>: Exibe o próximo comando no
+      histórico.</li>
+    <li><strong><code>!!</code></strong>: Repete o último comando executado.
+      Útil para reexecutar rapidamente.</li>
+    <li><strong><code>!$</code> ou <code>Alt + .</code></strong>: Insere o
+      último argumento do comando anterior. Extremamente útil para reutilizar
+      caminhos de arquivo ou nomes de diretório.</li>
+    <li><strong><code>!string</code></strong>: Repete o comando mais recente
+      que começa com <code>string</code>. Ex: <code>!apt</code> para repetir o
+      último comando <code>apt</code>.</li>
+    <li><strong><code>!string:p</code></strong>: Imprime o comando que
+      <code>!string</code> executaria, sem executá-lo.
+    </li>
+  </ul>
+  <h3 id="controle-de-processos">2.3. Controle de Processos:</h3>
+  <ul>
+    <li><strong><code>Ctrl + Z</code></strong>: Pausa o comando atual
+      (coloca-o em segundo plano). Use <code>fg</code> para trazê-lo de volta
+      para o primeiro plano ou <code>bg</code> para continuar em segundo
+      plano.</li>
+    <li><strong><code>Ctrl + S</code></strong>: Pausa a saída do terminal.
+      Útil quando um comando está gerando muita saída rapidamente.</li>
+    <li><strong><code>Ctrl + Q</code></strong>: Retoma a saída do terminal
+      após uma pausa com <code>Ctrl + S</code>.</li>
+  </ul>
+  <h3 id="gerenciamento-da-tela">2.4. Gerenciamento da Tela:</h3>
+  <ul>
+    <li><strong><code>Ctrl + L</code></strong>: Limpa a tela do terminal,
+      mantendo a linha de comando atual no topo.</li>
+  </ul>
+  <h2 id="atalhos-específicos-do-powershell">3. Atalhos Específicos do
+    PowerShell</h2>
+  <p>O PowerShell é um shell de linha de comando e linguagem de script
+    desenvolvido pela Microsoft, focado em automação e gerenciamento de
+    configurações. Muitos de seus atalhos são influenciados pelo ambiente
+    Windows e pelo módulo PSReadLine.</p>
+  <h3 id="edição-de-texto-e-comando">3.1. Edição de Texto e Comando</h3>
+  <ul>
+    <li><strong><code>Ctrl + Home</code></strong>: Move o cursor para o
+      início do buffer de entrada (início da linha).</li>
+    <li><strong><code>Ctrl + End</code></strong>: Move o cursor para o final
+      do buffer de entrada (final da linha).</li>
+    <li><strong><code>Ctrl + Left Arrow</code></strong>: Move o cursor uma
+      palavra para trás.</li>
+    <li><strong><code>Ctrl + Right Arrow</code></strong>: Move o cursor uma
+      palavra para frente.</li>
+    <li><strong><code>Ctrl + Backspace</code></strong>: Apaga a palavra
+      anterior ao cursor.</li>
+    <li><strong><code>Ctrl + Delete</code></strong>: Apaga a palavra
+      seguinte ao cursor.</li>
+    <li><strong><code>Ctrl + Space</code> (No ISE/VS Code com
+        extensão)</strong>: Exibe a ajuda do IntelliSense (preenchimento
+      automático de comandos e parâmetros).</li>
+    <li><strong><code>Ctrl + Y</code></strong>: Em PowerShell ISE, refaz a
+      última ação desfeita (“Redo”). No console, com o módulo PSReadLine, pode
+      funcionar como “Yank” (colar texto previamente “morto” ou “recortado”
+      para o kill ring).</li>
+    <li><strong><code>Ctrl + Z</code></strong>: Em PowerShell ISE, desfaz a
+      última ação. No console, pode suspender um processo, similar ao
+      Bash.</li>
+  </ul>
+  <h3 id="controle-de-execução">3.2. Controle de Execução</h3>
+  <ul>
+    <li><strong><code>Enter</code></strong>: Executa o comando atual.</li>
+    <li><strong><code>Shift + Enter</code></strong>: Adiciona uma nova linha
+      sem executar o comando (útil para comandos de várias linhas).</li>
+  </ul>
+  <h3 id="histórico-de-comandos">3.3. Histórico de Comandos</h3>
+  <ul>
+    <li><strong><code>Seta para Cima (↑)</code></strong>: Exibe o comando
+      anterior no histórico.</li>
+    <li><strong><code>Seta para Baixo (↓)</code></strong>: Exibe o próximo
+      comando no histórico.</li>
+    <li><strong><code>F7</code></strong>: Exibe uma janela com o histórico
+      de comandos, permitindo selecionar com as setas.</li>
+    <li><strong><code>Alt + F7</code></strong>: Limpa o histórico de
+      comandos da sessão atual.</li>
+    <li><strong><code>F8</code></strong>: Pesquisa o histórico de comandos a
+      partir da posição atual do cursor.</li>
+    <li><strong><code>F9</code></strong>: Seleciona um comando do histórico
+      pelo seu número.</li>
+    <li><strong><code>Alt + .</code></strong>: Insere o último argumento do
+      comando anterior.</li>
+    <li><strong><code>Ctrl + R</code></strong>: Pesquisa incremental inversa
+      no histórico de comandos (com PSReadLine).</li>
+  </ul>
+  <h3 id="interface-do-powershell-ise-integrated-scripting-environment">3.4.
+    Interface do PowerShell ISE (Integrated Scripting Environment)</h3>
+  <p>O ISE é um ambiente de desenvolvimento integrado para PowerShell, com
+    recursos gráficos e de edição avançados.</p>
+  <ul>
+    <li><strong><code>F1</code></strong>: Abre a ajuda para o cmdlet ou
+      tópico atual.</li>
+    <li><strong><code>F5</code></strong>: Executa o script completo no
+      painel de script.</li>
+    <li><strong><code>F8</code></strong>: Executa a seleção atual no painel
+      de script.</li>
+    <li><strong><code>Ctrl + N</code></strong>: Abre um novo painel de
+      script.</li>
+    <li><strong><code>Ctrl + O</code></strong>: Abre um arquivo
+      existente.</li>
+    <li><strong><code>Ctrl + S</code></strong>: Salva o arquivo atual.</li>
+    <li><strong><code>Ctrl + M</code></strong>: Expande ou recolhe regiões
+      de código (code folding).</li>
+    <li><strong><code>Ctrl + F</code></strong>: Abre a caixa de diálogo
+      “Localizar” no painel de script.</li>
+    <li><strong><code>Ctrl + H</code></strong>: Abre a caixa de diálogo
+      “Substituir” no painel de script.</li>
+    <li><strong><code>Ctrl + J</code></strong>: Mostra snippets de código
+      (modelos de código pré-definidos).</li>
+    <li><strong><code>Ctrl + Shift + A</code></strong>: Alterna o comentário
+      de bloco (<code>&lt;#...#&gt;</code>).</li>
+    <li><strong><code>Ctrl + K</code></strong>: Alterna o comentário de
+      linha (<code>#</code>).</li>
+  </ul>
+  <h2 id="comandos-comuns-e-específicos-para-bash-cmd-e-powershell">4.
+    Comandos Comuns e Específicos para Bash, CMD e PowerShell</h2>
+  <p>Esta seção oferece uma comparação de comandos essenciais em três dos
+    ambientes de linha de comando mais utilizados. Embora a funcionalidade
+    seja similar, a sintaxe e a filosofia de cada shell podem variar.</p>
+  <h2 id="comandos-comuns-funcionalidade-similar-ou-equivalentes">5.
+    Comandos Comuns (funcionalidade similar ou equivalentes)</h2>
+  <p>Aqui estão os comandos que executam funções semelhantes ou idênticas
+    em todos os três ambientes, embora a sintaxe exata possa variar
+    ligeiramente.</p>
+  <h3 id="navegação-de-diretórios">5.1. Navegação de Diretórios:</h3>
+  <ul>
+    <li><strong>Bash/CMD/PowerShell</strong>:
+      <code>cd &lt;diretório&gt;</code>
+      <ul>
+        <li>Muda o diretório de trabalho atual.</li>
+        <li>Ex: <code>cd Documentos</code> (Windows) ou
+          <code>cd ~/Documentos</code> (Linux/macOS).
+        </li>
+        <li><code>cd ..</code>: Volta um nível no diretório.</li>
+        <li><code>cd ~</code> (Bash/PowerShell): Vai para o diretório home do
+          usuário.</li>
+        <li><code>cd -</code> (Bash): Volta para o diretório anterior.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="listar-conteúdo-do-diretório">5.2. Listar Conteúdo do
+    Diretório</h3>
+  <ul>
+    <li><strong>Bash/PowerShell</strong>: <code>ls</code>
+      <ul>
+        <li>Lista o conteúdo do diretório atual.</li>
+        <li><code>ls -l</code>: Lista em formato longo (detalhes).</li>
+        <li><code>ls -a</code>: Lista incluindo arquivos ocultos.</li>
+      </ul>
+    </li>
+    <li><strong>CMD/PowerShell</strong>: <code>dir</code>
+      <ul>
+        <li>Lista o conteúdo do diretório atual.</li>
+        <li><code>dir /w</code>: Lista em formato largo.</li>
+        <li><code>dir /a</code>: Lista incluindo arquivos ocultos.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="criar-diretório">5.3. Criar Diretório</h3>
+  <ul>
+    <li><strong>Bash/CMD/PowerShell</strong>:
+      <code>mkdir &lt;nome_do_diretório&gt;</code>
+      <ul>
+        <li>Cria um novo diretório.</li>
+        <li>Ex: <code>mkdir MeusProjetos</code></li>
+        <li><code>mkdir -p &lt;caminho/para/diretório&gt;</code> (Bash): Cria
+          diretórios pais se não existirem.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="remover-arquivo">5.4. Remover Arquivo</h3>
+  <ul>
+    <li><strong>Bash</strong>: <code>rm &lt;nome_do_arquivo&gt;</code></li>
+    <li><strong>CMD</strong>: <code>del &lt;nome_do_arquivo&gt;</code></li>
+    <li><strong>PowerShell</strong>:
+      <code>Remove-Item &lt;nome_do_arquivo&gt;</code> (ou
+      <code>rm &lt;nome_do_arquivo&gt;</code> como alias)
+    </li>
+  </ul>
+  <h3 id="remover-diretório-vazio">5.5. Remover Diretório (Vazio)</h3>
+  <ul>
+    <li><strong>Bash/CMD</strong>:
+      <code>rmdir &lt;nome_do_diretório&gt;</code>
+    </li>
+    <li><strong>PowerShell</strong>:
+      <code>Remove-Item &lt;nome_do_diretório&gt;</code> (ou
+      <code>rmdir &lt;nome_do_diretório&gt;</code> como alias)
+    </li>
+  </ul>
+  <h3 id="remover-diretório-não-vaziorecursivo">5.6. Remover Diretório
+    (Não Vazio/Recursivo)</h3>
+  <ul>
+    <li><strong>Bash</strong>: <code>rm -r &lt;nome_do_diretório&gt;</code>
+      <ul>
+        <li>O <code>-r</code> significa recursivo. Use com cautela, pois não
+          pede confirmação por padrão.</li>
+      </ul>
+    </li>
+    <li><strong>CMD</strong>:
+      <code>rmdir /s &lt;nome_do_diretório&gt;</code>
+      <ul>
+        <li>O <code>/s</code> significa recursivo. Geralmente pede confirmação.
+          Para forçar sem confirmação, adicione <code>/q</code>
+          (<code>rmdir /s /q</code>).</li>
+      </ul>
+    </li>
+    <li><strong>PowerShell</strong>:
+      <code>Remove-Item -Recurse &lt;nome_do_diretório&gt;</code>
+      <ul>
+        <li>O <code>-Recurse</code> remove o diretório e seu conteúdo. Para
+          forçar sem confirmação, adicione <code>-Force</code>.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="copiar-arquivos">5.7. Copiar Arquivos</h3>
+  <ul>
+    <li><strong>Bash</strong>:
+      <code>cp &lt;origem&gt; &lt;destino&gt;</code>
+      <ul>
+        <li>Ex: <code>cp arquivo.txt /tmp/</code></li>
+      </ul>
+    </li>
+    <li><strong>CMD</strong>:
+      <code>copy &lt;origem&gt; &lt;destino&gt;</code>
+      <ul>
+        <li>Ex: <code>copy arquivo.txt C:\Temp\</code></li>
+      </ul>
+    </li>
+    <li><strong>PowerShell</strong>:
+      <code>Copy-Item &lt;origem&gt; &lt;destino&gt;</code> (ou
+      <code>cp &lt;origem&gt; &lt;destino&gt;</code> como alias)
+      <ul>
+        <li>Ex: <code>Copy-Item arquivo.txt C:\Temp\</code></li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="moverrenomear-arquivos">5.8. Mover/Renomear Arquivos</h3>
+  <ul>
+    <li><strong>Bash</strong>:
+      <code>mv &lt;origem&gt; &lt;destino&gt;</code>
+      <ul>
+        <li>Move um arquivo ou diretório. Se o destino for um novo nome no mesmo
+          diretório, renomeia.</li>
+      </ul>
+    </li>
+    <li><strong>CMD</strong>:
+      <ul>
+        <li><strong>Mover</strong>:
+          <code>move &lt;origem&gt; &lt;destino&gt;</code>
+        </li>
+        <li><strong>Renomear</strong>:
+          <code>ren &lt;origem&gt; &lt;novo_nome&gt;</code>
+        </li>
+      </ul>
+    </li>
+    <li><strong>PowerShell</strong>:
+      <ul>
+        <li><strong>Mover</strong>:
+          <code>Move-Item &lt;origem&gt; &lt;destino&gt;</code> (ou
+          <code>mv &lt;origem&gt; &lt;destino&gt;</code> como alias)
+        </li>
+        <li><strong>Renomear</strong>:
+          <code>Rename-Item &lt;origem&gt; &lt;novo_nome&gt;</code>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="exibir-conteúdo-de-arquivo">5.9. Exibir Conteúdo de Arquivo</h3>
+  <ul>
+    <li><strong>Bash</strong>: <code>cat &lt;nome_do_arquivo&gt;</code>
+      <ul>
+        <li>Exibe o conteúdo completo do arquivo. Para arquivos grandes, use
+          <code>less &lt;nome_do_arquivo&gt;</code> para visualização
+          paginada.
+        </li>
+      </ul>
+    </li>
+    <li><strong>CMD</strong>: <code>type &lt;nome_do_arquivo&gt;</code></li>
+    <li><strong>PowerShell</strong>:
+      <code>Get-Content &lt;nome_do_arquivo&gt;</code> (ou
+      <code>cat &lt;nome_do_arquivo&gt;</code> como alias)
+    </li>
+  </ul>
+  <h3 id="limpar-tela">5.10. Limpar Tela</h3>
+  <ul>
+    <li><strong>Bash/PowerShell</strong>: <code>clear</code></li>
+    <li><strong>CMD/PowerShell</strong>: <code>cls</code></li>
+  </ul>
+  <h3 id="testar-conectividade-de-rede">5.11. Testar Conectividade de
+    Rede</h3>
+  <ul>
+    <li><strong>Bash/CMD/PowerShell</strong>:
+      <code>ping &lt;endereço_ip_ou_dominio&gt;</code>
+      <ul>
+        <li>Envia pacotes ICMP para testar a conectividade com um host.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="configuração-de-ip-exibir">5.12. Configuração de IP
+    (Exibir)</h3>
+  <ul>
+    <li><strong>Bash</strong>: <code>ip a</code> (moderno) ou
+      <code>ifconfig</code> (em sistemas mais antigos)
+      <ul>
+        <li>Exibe informações sobre interfaces de rede e endereços IP.</li>
+      </ul>
+    </li>
+    <li><strong>CMD/PowerShell</strong>: <code>ipconfig</code>
+      <ul>
+        <li>Exibe informações de configuração de IP para adaptadores de rede no
+          Windows.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="sair-do-terminal">5.13. Sair do Terminal</h3>
+  <ul>
+    <li><strong>Bash/CMD/PowerShell</strong>: <code>exit</code>
+      <ul>
+        <li>Encerra a sessão atual do shell.</li>
+      </ul>
+    </li>
+  </ul>
+  <h2 id="comandos-específicos-do-bash">6. Comandos Específicos do
+    Bash</h2>
+  <p>O Bash é conhecido por sua versatilidade e integração com ferramentas
+    poderosas do ecossistema Unix/Linux.</p>
+  <ul>
+    <li><strong><code>grep &lt;padrão&gt; &lt;arquivo&gt;</code></strong>:
+      Filtra linhas em um arquivo que correspondem a um padrão. Ex:
+      <code>grep "erro" log.txt</code>
+    </li>
+    <li><strong><code>awk '{print $1}' &lt;arquivo&gt;</code></strong>:
+      Ferramenta de processamento de texto para extrair e manipular dados em
+      colunas. Ex: <code>cat dados.txt | awk '{print $1, $3}'</code></li>
+    <li><strong><code>sed 's/antigo/novo/g' &lt;arquivo&gt;</code></strong>:
+      Editor de fluxo para transformar texto. Ex:
+      <code>sed 's/foo/bar/g' arquivo.txt</code>
+    </li>
+    <li><strong><code>ssh &lt;usuário&gt;@&lt;host&gt;</code></strong>:
+      Conecta-se a um servidor remoto via Secure Shell.</li>
+    <li><strong><code>sudo &lt;comando&gt;</code></strong>: Executa um
+      comando com privilégios de superusuário.</li>
+    <li><strong><code>chmod &lt;permissões&gt; &lt;arquivo&gt;</code></strong>:
+      Altera as permissões de acesso de um arquivo. Ex:
+      <code>chmod +x script.sh</code> (torna executável).
+    </li>
+    <li><strong><code>chown &lt;usuário&gt;:&lt;grupo&gt; &lt;arquivo&gt;</code></strong>:
+      Altera o proprietário e/ou grupo de um arquivo.</li>
+    <li><strong><code>tar -czvf &lt;arquivo.tar.gz&gt; &lt;diretório&gt;</code></strong>:
+      Cria ou extrai arquivos compactados (tarballs).
+      <ul>
+        <li><code>-c</code>: criar, <code>-z</code>: gzip, <code>-v</code>:
+          verbose, <code>-f</code>: arquivo.</li>
+        <li>Para extrair: <code>tar -xzvf &lt;arquivo.tar.gz&gt;</code>.</li>
+      </ul>
+    </li>
+    <li><strong><code>ps aux</code></strong>: Exibe informações sobre
+      processos em execução.</li>
+    <li><strong><code>top</code></strong>: Exibe um monitor de processos
+      dinâmico em tempo real.</li>
+    <li><strong><code>history</code></strong>: Exibe o histórico de comandos
+      digitados.</li>
+    <li><strong><code>man &lt;comando&gt;</code></strong>: Exibe o manual
+      (página de ajuda) de um comando.</li>
+    <li><strong><code>df -h</code></strong>: Exibe o uso do disco em formato
+      legível (human-readable).</li>
+    <li><strong><code>du -sh &lt;diretório&gt;</code></strong>: Exibe o
+      tamanho total de um diretório em formato legível.</li>
+    <li><strong><code>find &lt;caminho&gt; -name &lt;nome&gt;</code></strong>:
+      Procura arquivos e diretórios. Ex:
+      <code>find . -name "*.log"</code>
+    </li>
+    <li><strong><code>wget &lt;URL&gt;</code> /
+        <code>curl &lt;URL&gt;</code></strong>: Ferramentas para baixar arquivos
+      ou fazer requisições HTTP.</li>
+  </ul>
+  <h2 id="comandos-específicos-do-cmd-prompt-de-comando-do-windows">7.
+    Comandos Específicos do CMD (Prompt de Comando do Windows)</h2>
+  <p>O CMD é o shell tradicional do Windows, focado em operações de
+    sistema de arquivos e comandos básicos do Windows.</p>
+  <ul>
+    <li><strong><code>tasklist</code></strong>: Exibe uma lista de processos
+      em execução.</li>
+    <li><strong><code>taskkill /IM &lt;nome_do_processo.exe&gt; /F</code></strong>:
+      Finaliza um processo em execução. O <code>/F</code> força o
+      encerramento.</li>
+    <li><strong><code>netstat -ano</code></strong>: Exibe conexões de rede
+      ativas, portas de escuta e IDs de processo.</li>
+    <li><strong><code>reg query &lt;chave&gt;</code></strong>: Consulta
+      chaves e valores do Registro do Windows.</li>
+    <li><strong><code>schtasks /create /tn &lt;nome_da_tarefa&gt; /tr &lt;comando_a_executar&gt; /sc
+          daily</code></strong>:
+      Cria tarefas agendadas.</li>
+    <li><strong><code>systeminfo</code></strong>: Exibe informações
+      detalhadas sobre o sistema operacional e hardware.</li>
+    <li><strong><code>diskpart</code></strong>: Utilitário de linha de
+      comando para gerenciamento de partições de disco (requer privilégios de
+      administrador).</li>
+    <li><strong><code>tree &lt;caminho&gt;</code></strong>: Exibe a
+      estrutura de diretórios de forma gráfica.</li>
+    <li><strong><code>gpupdate /force</code></strong>: Atualiza as políticas
+      de grupo.</li>
+    <li><strong><code>sfc /scannow</code></strong>: Verifica e repara
+      arquivos de sistema protegidos.</li>
+    <li><strong><code>chkdsk</code></strong>: Verifica e repara erros no
+      sistema de arquivos de um volume.</li>
+    <li><strong><code>format</code></strong>: Formata um disco.</li>
+  </ul>
+  <h2 id="comandos-específicos-do-powershell">8. Comandos Específicos do
+    PowerShell</h2>
+  <p>O PowerShell é um shell orientado a objetos com uma estrutura de
+    “cmdlets” (command-lets) que oferecem funcionalidades avançadas de
+    gerenciamento e automação.</p>
+  <ul>
+    <li><strong><code>Get-Process</code></strong>: Lista os processos em
+      execução (equivalente a <code>ps</code> no Bash, mas retorna objetos que
+      podem ser manipulados).</li>
+    <li><strong><code>Stop-Process -Name "&lt;nome_do_processo&gt;"</code></strong>:
+      Interrompe um ou mais processos.</li>
+    <li><strong><code>Get-Service</code></strong>: Lista os serviços do
+      Windows e seu status.</li>
+    <li><strong><code>Set-Service -Name "&lt;nome_do_serviço&gt;" -Status Running</code></strong>:
+      Inicia, para ou reinicia um serviço.</li>
+    <li><strong><code>Invoke-WebRequest -Uri &lt;URL&gt;</code></strong>:
+      Faz requisições HTTP para buscar conteúdo web.</li>
+    <li><strong><code>New-Item -Path &lt;caminho&gt; -ItemType File -Name &lt;nome_do_arquivo&gt;</code></strong>:
+      Cria novos arquivos ou diretórios.
+      <ul>
+        <li>Ex:
+          <code>New-Item -Path "C:\Temp\novo.txt" -ItemType File</code>
+        </li>
+      </ul>
+    </li>
+    <li><strong><code>Remove-Item -Path &lt;caminho&gt;</code></strong>:
+      Remove um arquivo ou diretório.</li>
+    <li><strong><code>Copy-Item -Path &lt;origem&gt; -Destination &lt;destino&gt;</code></strong>:
+      Copia itens (arquivos ou diretórios).</li>
+    <li><strong><code>Move-Item -Path &lt;origem&gt; -Destination &lt;destino&gt;</code></strong>:
+      Move itens.</li>
+    <li><strong><code>Select-Object -Property &lt;propriedade1&gt;, &lt;propriedade2&gt;</code></strong>:
+      Seleciona propriedades de objetos.
+      <ul>
+        <li>Ex: <code>Get-Process | Select-Object Name, Id, CPU</code></li>
+      </ul>
+    </li>
+    <li><strong><code>Where-Object -Property &lt;propriedade&gt; -EQ &lt;valor&gt;</code></strong>:
+      Filtra objetos com base em propriedades.
+      <ul>
+        <li>Ex:
+          <code>Get-Service | Where-Object Status -EQ "Running"</code>
+        </li>
+      </ul>
+    </li>
+    <li><strong><code>ForEach-Object { &lt;script_block&gt; }</code></strong>:
+      Processa cada objeto em uma coleção.
+      <ul>
+        <li>Ex:
+          <code>Get-Service | ForEach-Object { Write-Host $_.Name }</code>
+        </li>
+      </ul>
+    </li>
+    <li><strong><code>Get-Help &lt;cmdlet&gt;</code></strong>: Obtém ajuda
+      detalhada sobre um cmdlet.</li>
+    <li><strong><code>Get-Command</code></strong>: Lista todos os comandos
+      (cmdlets, funções, aliases, etc.) disponíveis.</li>
+    <li><strong><code>Set-ExecutionPolicy RemoteSigned</code></strong>:
+      Define a política de execução de scripts. É crucial para permitir a
+      execução de scripts baixados da internet (mas exige que sejam assinados
+      digitalmente).</li>
+    <li><strong><code>Get-ChildItem</code></strong>: Equivalente a
+      <code>ls</code> ou <code>dir</code>, lista o conteúdo de
+      diretórios.
+    </li>
+  </ul>
+  <h2 id="gerenciamento-de-variáveis-de-ambiente">9. Gerenciamento de
+    Variáveis de Ambiente</h2>
+  <p>Variáveis de ambiente são pares nome-valor que armazenam informações
+    sobre o ambiente de execução do sistema. Elas são usadas por programas e
+    scripts para configurar seu comportamento.</p>
+  <ul>
+    <li><strong>Bash</strong>:
+      <ul>
+        <li><strong>Listar todas</strong>: <code>printenv</code> ou
+          <code>env</code>
+        </li>
+        <li><strong>Exibir uma específica</strong>:
+          <code>echo $NOME_DA_VARIAVEL</code>
+        </li>
+        <li><strong>Definir (temporário para a sessão)</strong>:
+          <code>export NOME_DA_VARIAVEL="valor"</code>
+        </li>
+        <li><strong>Definir (permanente)</strong>: Adicione a linha
+          <code>export NOME_DA_VARIAVEL="valor"</code> ao arquivo
+          <code>~/.bashrc</code> ou <code>~/.profile</code> e recarregue com
+          <code>source ~/.bashrc</code>.
+        </li>
+        <li><strong>Remover</strong>: <code>unset NOME_DA_VARIAVEL</code></li>
+      </ul>
+    </li>
+    <li><strong>CMD</strong>:
+      <ul>
+        <li><strong>Listar todas</strong>: <code>set</code></li>
+        <li><strong>Exibir uma específica</strong>:
+          <code>echo %NOME_DA_VARIAVEL%</code>
+        </li>
+        <li><strong>Definir (temporário para a sessão)</strong>:
+          <code>set NOME_DA_VARIAVEL=valor</code>
+        </li>
+        <li><strong>Definir (permanente)</strong>:
+          <code>setx NOME_DA_VARIAVEL "valor"</code> (cria uma variável de
+          ambiente de usuário permanente, disponível em novas sessões do Prompt de
+          Comando ou PowerShell, e após reiniciar o sistema para algumas
+          aplicações).
+        </li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>

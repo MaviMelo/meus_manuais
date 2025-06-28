@@ -1,0 +1,38 @@
+
+%  Cofiguração LaTeX para gerar PDF com o Pandoc.
+
+
+% --- Configurações de Layout e Margens ---
+\usepackage[margin=1.5cm]{geometry} % Margens: Ajuste para o valor desejado (ex: 2cm, ou left=2cm,right=2cm,top=2.5cm,bottom=2.5cm)
+\usepackage[fontsize=14pt]{scrextend}  % Altera o tamanho da fonte
+
+% \usepackage{helvet} % Para a fonte Helvetica
+\renewcommand{\familydefault}{\sfdefault} % Define a família de fontes padrão como sans-serif (Helvetica)
+
+
+% --- Configurações de Fonte (Requer XeLaTeX ou LuaLaTeX instalado) ---
+
+ \usepackage{fontspec} % Pacote para usar fontes do sistema
+ \setmainfont{Liberation Sans} % Define a fonte principal do documento como Arial
+% Opcional: Para fontes monoespaçadas (usadas em blocos de código e `texttt`)
+% Escolha uma fonte monoespaçada que você tenha instalada, como Consolas, Fira Code, Hack, Courier New, etc.
+ \setmonofont{Fira Code} 
+
+% --- Configurações de Cores e Destaque ---
+\usepackage{xcolor} % Pacote para cores
+
+% Definição de cores personalizadas (opcional, mas recomendado para consistência)
+\definecolor{comando_cor}{RGB}{0,0,139} % Azul escuro
+\definecolor{atalho_cor}{RGB}{0,100,0}  % Verde escuro
+\definecolor{script_cor}{RGB}{205,133,63} % Laranja/Marrom claro
+
+% Comandos personalizados para destaque no Markdown (usar como raw LaTeX)
+% Ex: \comando{Ctrl + C}
+\newcommand{\comando}[1]{\textbf{\textcolor{comando_cor}{#1}}}
+\newcommand{\atalho}[1]{\textbf{\textcolor{atalho_cor}{#1}}}
+\newcommand{\script}[1]{\texttt{\textcolor{script_cor}{#1}}} % \texttt para texto monoespaçado
+
+% --- Outras configurações úteis (opcional) ---
+% Para ajustar o espaçamento entre linhas (se necessário)
+ \linespread{1.1} % Ajusta o espaçamento para 110% do padrão
+
