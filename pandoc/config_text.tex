@@ -1,0 +1,97 @@
+%  Cofiguração LaTeX para gerar PDF com o Pandoc.
+
+
+% --- Configurações de Layout e Margens ---
+\usepackage[margin=1.5cm]{geometry} % Margens: Ajuste para o valor desejado (ex: 2cm, ou left=2cm,right=2cm,top=2.5cm,bottom=2.5cm)
+\usepackage[fontsize=14pt]{scrextend}  % Altera o tamanho da fonte
+
+% \usepackage{helvet} % Para a fonte Helvetica
+\renewcommand{\familydefault}{\sfdefault} % Define a família de fontes padrão como sans-serif (Helvetica)
+
+
+% --- Configurações de Fonte (Requer XeLaTeX ou LuaLaTeX instalado, ou comente o {fontspec} e desconcidere o uso.) ---
+%
+% Adicione \'--pdf-engine=xelatex\' ou \'--pdf-engine=lualatex\' ao comando. 
+% Exemplos:
+%           pandoc <arquivo.md> -o <arquivo_gerado.pdf> --toc -H config_text.tex --pdf-engine=xelatex
+%
+
+
+ \usepackage{fontspec} % Pacote para usar fontes do sistema
+ \setmainfont{Liberation Sans} % Define a fonte principal do documento
+% Opcional: Para fontes monoespaçadas (usadas em blocos de código e `texttt`)
+% Escolha uma fonte monoespaçada que você tenha instalada, como Consolas, Fira Code, Hack, Courier New, etc.
+ \setmonofont{Fira Code} 
+\usepackage{textcomp} % para melhorar a exibição de operadores e outros símbolos 
+
+% --- Configurações de Cores e Destaque ---
+\usepackage{xcolor} % Pacote para cores
+
+% Definição de cores personalizadas (opcional, mas recomendado para consistência)
+\definecolor{comando_cor}{RGB}{0,0,139} % Azul escuro
+\definecolor{atalho_cor}{RGB}{0,100,0}  % Verde escuro
+\definecolor{script_cor}{RGB}{205,133,63} % Laranja/Marrom claro
+
+% Comandos personalizados para destaque no Markdown (usar como raw LaTeX)
+% Ex: \comando{Ctrl + C}
+\newcommand{\comando}[1]{\textbf{\textcolor{comando_cor}{#1}}}
+\newcommand{\atalho}[1]{\textbf{\textcolor{atalho_cor}{#1}}}
+\newcommand{\script}[1]{\texttt{\textcolor{script_cor}{#1}}} % \texttt para texto monoespaçado
+
+% --- Outras configurações úteis (opcional) ---
+% Para ajustar o espaçamento entre linhas (se necessário)
+ \linespread{1.1} % Ajusta o espaçamento para 110% do padrão
+
+
+% --- CONFIGURAÇÕES PARA TABELAS ---
+\usepackage{booktabs} % Para tabelas com linhas profissionais (toprule, midrule, bottomrule)
+\usepackage{array}    % Para maior controle sobre colunas de tabela
+\usepackage{longtable} % Para tabelas que podem quebrar entre páginas
+
+% Ajustes de espaçamento e alinhamento (opcional)
+\setlength{\tabcolsep}{8pt} % Espaçamento entre colunas
+\renewcommand{\arraystretch}{1.2} % Espaçamento entre linhas
+
+% Cores para as linhas da tabela (opcional, requer xcolor)
+% Já temos o pacote xcolor carregado, então podemos usar.
+\definecolor{lightgray}{rgb}{0.9,0.9,0.9} % Cor cinza claro
+
+% Comando para sombrear linhas alternadas (opcional)
+\usepackage{colortbl}
+\rowcolors{2}{white}{lightgray} % Começa na linha 2, alterna branco e cinza claro
+
+
+% Carrega o pacote para renderizar código
+\usepackage{listings}
+
+% Definição de cores para o realce de sintaxe
+\definecolor{codegreen}{rgb}{0.0,0.6,0.0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0.0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+
+% Configurações globais para todos os blocos de código com realce de sintaxe
+\lstset{ 
+  breaklines=true,            % Quebrar linhas longas automaticamente
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Símbolo para indicar quebra de linha
+  numbers=left,               % Números de linha à esquerda
+  numberstyle=\tiny\color{gray}, % Estilo dos números de linha
+  frame=single,               % Adiciona uma borda ao redor do código
+  captionpos=b,               % Posição da legenda (b=bottom)
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+}
+
